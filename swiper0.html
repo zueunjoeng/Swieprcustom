@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Swiper demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- Demo styles -->
+  <style>
+    html,
+    body {
+      position: relative;
+      height: 100%;
+    }
+
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+    /* 슬라이드 */
+    .swiper-slide { 
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;      
+    }
+    .swiper-slide span{
+        transform: translateY(100%);
+        opacity: 0;
+        transition: 1s;
+        font-size: 50px;
+    }
+    /* 화면에 조준된 슬라이드 */
+    .swiper-slide-active span{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    .ad0{
+        background-image: url(https://www.wwdoctor.com/static/asset/images/main/banner_bg_01.jpg);        
+    }
+    .ad1{
+        background-image: url(https://www.wwdoctor.com/static/asset/images/main//banner_bg_02.jpg);        
+    }
+    .ad2{
+        background-image: url(https://www.wwdoctor.com/static/asset/images/main//banner_bg_03.jpg);        
+    }
+
+    /* .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    } */
+
+    /*버튼들*/
+    .swiper-pagination-bullet {
+      width: auto;
+      height: auto;
+      text-align: center;
+      line-height: 20px;
+      font-size: 12px;
+      color: #000;
+      opacity: 1;
+      background-color: transparent;
+      /* background: rgba(0, 0, 0, 0.2); */
+    }
+    /* 활성화된 버튼*/
+    .swiper-pagination-bullet-active {
+      /* color: #fff; */
+      color: #007aff;
+      background-color: transparent;
+    }
+   
+  </style>
+</head>
+
+<body>
+  <!-- Swiper -->
+  <div class="swiper mySwiper" id="pyengkang">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide ad0">
+          <span>광고배너타이틀</span>
+      </div>
+      <div class="swiper-slide ad1"><span>광고배너타이틀</span></div>
+      <div class="swiper-slide ad2"><span>광고배너타이틀</span></div>    
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    const __swiper = new Swiper("#pyengkang.mySwiper", {
+      loop: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: "#pyengkang  .swiper-pagination",
+        clickable: true,
+        renderBullet: function (index, className) {
+          return `<span class="${className}">뭐라도나오나?</span>`;
+        },
+      },
+    });
+   
+   
+  </script>
+</body>
+
+</html>
