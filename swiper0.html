@@ -11,10 +11,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200..900&display=swap" rel="stylesheet">
   <!-- Demo styles -->
   <style>
-    body *{
+    body, ul, li, p, div, h1{
       margin: 0;
       padding: 0;
-    }
+    }    
     
     .bg0{
         background-image: url(https://www.wwdoctor.com/static/asset/images/main/banner_bg_01.jpg);        
@@ -26,18 +26,17 @@
         background-image: url(https://www.wwdoctor.com/static/asset/images/main//banner_bg_03.jpg);        
     }
     .swiper-slide{
-      height: 95vh;
+      height: 100vh;
       background-repeat: no-repeat;
       background-position: center;
-      background-size: cover;
+      background-size: cover;    
     }
     .swiper-slide-active{
 
     }
-
     #mainBanner .swiper-pagination{
-      right:0;
-      bottom: 3rem;
+      width:auto;
+      bottom: 0;
       text-align: left;
     }
     .swiper-pagination-bullet{
@@ -50,25 +49,21 @@
       line-height: 3;
     }
     .swiper-pagination-bullet-active{
-      color:rgb(10, 207, 214)
+      color:rgb(10, 207, 214);
     }
     .container{
       max-width:1440px;
-      margin: 0 auto;
-      justify-content: start;
+      margin: 0 auto;    
     }
-
     .h-100{
       height: 100%;
     }
-    
     .d-flex{
       display: flex;
     }
     .aic{
       align-items: center;
     }
-
     .fc_white {
     color: #fff;
     }
@@ -85,31 +80,39 @@
     overflow: hidden !important;
     }
 
-    .swiper-pagination-bullet:before{  
+    .swiper-pagination-bullet:before{
       content: "";
       display: block;
       position: absolute;
-      left: 0; right: 0; 
-      bottom: 0;
-      height: 4px;
-      background-color: rgba(255, 255, 255, 0.5);
+      left:0; right:0;
+      bottom:0;
+      height:4px;
+      background-color: rgba(255,255,255,0.5);
     }
     .swiper-pagination-bullet:after{
       content: "";
       display: block;
       position: absolute;
-      left: 0;
+      left:0;
       width:0;
-      bottom: 0;
-      height: 4px;
-      background-color: rgba(255, 0, 0, 1);
-    
+      bottom:0;
+      height:4px;      
+      background-color: rgba(255,0,0,1);
+      z-index: 1000;
     }
-   
     .swiper-pagination-bullet-active:after{
-      width: 100%;  
+      width:100%;
       transition: 3s;
     }
+    .btns{
+      position: absolute;
+      left:0;
+      right:0;
+      bottom:5rem;            
+    }
+
+    
+   
   </style>
 </head>
 
@@ -119,7 +122,7 @@
     <div class="swiper" >
           <div class="swiper-wrapper">
                 <div class="swiper-slide  bg0">
-                  <div class="container d-flex h-100 aic">
+                  <div class="container h-100 d-flex aic">
                       <h2 class="notoS f64 fc_white medium">
                         <p class="overh">
                             <span>비염, 천식, 폐질환</span>
@@ -131,7 +134,7 @@
                   </div>                    
                 </div>
                 <div class="swiper-slide  bg1">
-                  <div class="container d-flex h-100 aic">
+                  <div class="container h-100 d-flex aic">
                     <h2 class="notoS f64 fc_white medium">
                       <p class="overh">
                           <span>근본치료에 집중하는</span>
@@ -143,7 +146,7 @@
                   </div>  
                 </div>
                 <div class="swiper-slide  bg2">
-                  <div class="container d-flex h-100 aic">
+                  <div class="container  h-100 d-flex aic">
                     <h2 class="notoS f64 fc_white medium">
                       <p class="overh">
                           <span>편강 의학이</span>
@@ -151,14 +154,18 @@
                       <p class="overh">
                           <span>세계로 갑니다</span>
                       </p>
-                  </h2>
+                    </h2>
                   </div>  
                 </div>    
           </div>
-            <div class="swiper-pagination container">
-
+          <div class="container btns d-flex">
+            <div class="swiper-pagination">
+              <!-- 여기안에는 태그를 넣을 수가 없음 커스터마이징 불가 -->
             </div>
+          </div>
+
          
+                 
     </div>
   </section>
 
