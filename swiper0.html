@@ -133,7 +133,7 @@
   <section id="mainBanner">
     <div class="swiper" >
           <div class="swiper-wrapper">
-                <div class="swiper-slide  bg0">
+                <div class="swiper-slide  bg0" data-btn="평강탕할인">
                   <div class="container h-100 d-flex aic">
                       <h2 class="notoS f64 fc_white medium">
                         <p class="overh">
@@ -145,7 +145,7 @@
                       </h2>
                   </div>                    
                 </div>
-                <div class="swiper-slide  bg1">
+                <div class="swiper-slide  bg1" data-btn="버튼글자 태그에서 수정">
                   <div class="container h-100 d-flex aic">
                     <h2 class="notoS f64 fc_white medium">
                       <p class="overh">
@@ -157,7 +157,7 @@
                   </h2>
                   </div>  
                 </div>
-                <div class="swiper-slide  bg2">
+                <div class="swiper-slide  bg2" data-btn="dataset의 변수임">
                   <div class="container  h-100 d-flex aic">
                     <h2 class="notoS f64 fc_white medium">
                       <p class="overh">
@@ -175,7 +175,7 @@
               <!-- 여기안에는 태그를 넣을 수가 없음 커스터마이징 불가 -->
             </div>
           </div>
-
+    
          
                  
     </div>
@@ -187,7 +187,7 @@
 
   <script>
    //실행식
-   const bannerText = ["편강한의원 찐후기","한약소개","예약하기"];
+   //const bannerText = ["편강한의원 찐후기","한약소개","예약하기"];
    const swiper_mainBanner = new Swiper("#mainBanner .swiper", {
       loop: true,
       autoplay: {
@@ -198,7 +198,8 @@
         el: "#mainBanner .swiper-pagination",
         clickable: true,
         renderBullet: function (index, className) {
-          return `<span class="${className}">${bannerText[index]}</span>`;
+          console.log(this.slides[index].dataset.btn);
+          return `<span class="${className}">${this.slides[index].dataset.btn}</span>`; //return은 뱉고 끝난다는 의미라 return아래쪽에 쓰면 구동이 안됨.
         },
       },
     });
